@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,10 +38,12 @@ public class QuizesController {
 	private QuizRepository quizRepository;
 	
 	@RequestMapping(value = "/api/v1/quizes", method = RequestMethod.OPTIONS)
-	public ResponseEntity<?> options(HttpServletResponse response) {
-	    response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS");
-	    return new ResponseEntity<>(HttpStatus.OK);
-	}
+    public int options(@PathVariable String jiraid ,HttpServletResponse response) {
+        response.setHeader("Access-Control-Allow-Methods","GET,HEAD,POST");
+        response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS");
+        response.setHeader("Access-Control-Allow-Origin","*");
+        return 234;
+    }
 	
 	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@GetMapping
