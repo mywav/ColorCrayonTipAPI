@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thevisualcommunicationguy.models.User;
 import com.thevisualcommunicationguy.repositories.UserRepository;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1/users")
 public class UsersController {
@@ -34,14 +34,14 @@ public class UsersController {
 	@Autowired
 	private DataSource dataSource;
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<User> list() {
 		return userRepository.findAll(Sort.by(Sort.Direction.ASC, "rowid"));
 	}
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	public void create(@RequestBody User user) {
@@ -61,7 +61,7 @@ public class UsersController {
 			}		
 		}
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@PutMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK) 
 	public User merge(@RequestBody User user, @PathVariable("rowid") long id) {
@@ -83,7 +83,7 @@ public class UsersController {
 		return user;
 	}
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@GetMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK)
 	public User get(@PathVariable("rowid") long id) {

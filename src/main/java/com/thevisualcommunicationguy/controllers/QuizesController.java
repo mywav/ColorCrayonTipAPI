@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thevisualcommunicationguy.models.Quiz;
 import com.thevisualcommunicationguy.repositories.QuizRepository;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1/quizes")
 public class QuizesController {	
@@ -35,14 +35,14 @@ public class QuizesController {
 	@Autowired
 	private QuizRepository quizRepository;
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<Quiz> list() {
 		return quizRepository.findAll(Sort.by(Sort.Direction.ASC, "rowid"));
 	}
 
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	public void create(@RequestBody Quiz quiz) {
@@ -62,21 +62,21 @@ public class QuizesController {
 		quizRepository.save(quiz);
 		}
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@GetMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK)
 	public Quiz get(@PathVariable("rowid") long rowid) {
 		return quizRepository.getOne(rowid);
 	}
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@GetMapping("/username/{username}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Quiz> listByUsername(@PathVariable("username") String username) {
 		return quizRepository.findByUsername(username);
 	}
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@PutMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK) 
 	public Quiz merge(@RequestBody Quiz quiz, @PathVariable("rowid") long id) {

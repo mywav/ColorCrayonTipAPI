@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.thevisualcommunicationguy.models.Quiz;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 public interface QuizRepository extends JpaRepository<Quiz, Long> {
 	List<Quiz> findByUsername(String username);
 }
