@@ -35,6 +35,7 @@ public class UsersController {
 	
 	@CrossOrigin
 	@GetMapping
+	@ResponseStatus(HttpStatus.OK)
 	public List<User> list() {
 		return userRepository.findAll(Sort.by(Sort.Direction.ASC, "rowid"));
 	}
@@ -83,6 +84,7 @@ public class UsersController {
 	
 	@CrossOrigin
 	@GetMapping("/{rowid}")
+	@ResponseStatus(HttpStatus.OK)
 	public User get(@PathVariable("rowid") long id) {
 		return userRepository.getOne(id);
 	}	
