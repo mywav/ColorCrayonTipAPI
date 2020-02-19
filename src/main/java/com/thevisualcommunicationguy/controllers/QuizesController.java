@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thevisualcommunicationguy.models.Quiz;
 import com.thevisualcommunicationguy.repositories.QuizRepository;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1/quizes")
 public class QuizesController {	

@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thevisualcommunicationguy.models.User;
 import com.thevisualcommunicationguy.repositories.UserRepository;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1/users")
 public class UsersController {
