@@ -37,10 +37,10 @@ public class UsersController {
 	@Autowired
 	private DataSource dataSource;
 	
-	@RequestMapping(value = "*", method = RequestMethod.OPTIONS)
-	public ResponseEntity options(HttpServletResponse response) {
+	@RequestMapping(value = "/api/v1/users", method = RequestMethod.OPTIONS)
+	public ResponseEntity<?> options(HttpServletResponse response) {
 	    response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS");
-	    return new ResponseEntity(HttpStatus.OK);
+	    return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")

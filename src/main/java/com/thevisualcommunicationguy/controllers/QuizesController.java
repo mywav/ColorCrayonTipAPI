@@ -38,10 +38,10 @@ public class QuizesController {
 	@Autowired
 	private QuizRepository quizRepository;
 	
-	@RequestMapping(value = "*", method = RequestMethod.OPTIONS)
-	public ResponseEntity options(HttpServletResponse response) {
+	@RequestMapping(value = "/api/v1/quizes", method = RequestMethod.OPTIONS)
+	public ResponseEntity<?> options(HttpServletResponse response) {
 	    response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS");
-	    return new ResponseEntity(HttpStatus.OK);
+	    return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
