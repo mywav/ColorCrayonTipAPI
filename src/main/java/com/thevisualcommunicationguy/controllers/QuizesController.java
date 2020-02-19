@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,12 +33,14 @@ public class QuizesController {
 
 	@Autowired
 	private QuizRepository quizRepository;
-
+	
+	@CrossOrigin
 	@GetMapping
 	public List<Quiz> list() {
 		return quizRepository.findAll(Sort.by(Sort.Direction.ASC, "rowid"));
 	}
 
+	@CrossOrigin
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	public void create(@RequestBody Quiz quiz) {
@@ -57,17 +60,19 @@ public class QuizesController {
 		quizRepository.save(quiz);
 		}
 	
-
+	@CrossOrigin
 	@GetMapping("/{rowid}")
 	public Quiz get(@PathVariable("rowid") long rowid) {
 		return quizRepository.getOne(rowid);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/username/{username}")
 	public List<Quiz> listByUsername(@PathVariable("username") String username) {
 		return quizRepository.findByUsername(username);
 	}
 	
+	@CrossOrigin
 	@PutMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK) 
 	public Quiz merge(@RequestBody Quiz quiz, @PathVariable("rowid") long id) {
