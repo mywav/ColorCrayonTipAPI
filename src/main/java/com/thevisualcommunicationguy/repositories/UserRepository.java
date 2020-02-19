@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.thevisualcommunicationguy.models.User;
 
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public interface UserRepository extends JpaRepository<User, Long>{
 
 }

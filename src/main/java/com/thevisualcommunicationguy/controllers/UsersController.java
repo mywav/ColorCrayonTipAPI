@@ -34,14 +34,14 @@ public class UsersController {
 	@Autowired
 	private DataSource dataSource;
 	
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<User> list() {
 		return userRepository.findAll(Sort.by(Sort.Direction.ASC, "rowid"));
 	}
 	
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	public void create(@RequestBody User user) {
@@ -61,7 +61,7 @@ public class UsersController {
 			}		
 		}
 	
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PutMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK) 
 	public User merge(@RequestBody User user, @PathVariable("rowid") long id) {
@@ -83,7 +83,7 @@ public class UsersController {
 		return user;
 	}
 	
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK)
 	public User get(@PathVariable("rowid") long id) {

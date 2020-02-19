@@ -35,14 +35,14 @@ public class QuizesController {
 	@Autowired
 	private QuizRepository quizRepository;
 	
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<Quiz> list() {
 		return quizRepository.findAll(Sort.by(Sort.Direction.ASC, "rowid"));
 	}
 
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	public void create(@RequestBody Quiz quiz) {
@@ -62,21 +62,21 @@ public class QuizesController {
 		quizRepository.save(quiz);
 		}
 	
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK)
 	public Quiz get(@PathVariable("rowid") long rowid) {
 		return quizRepository.getOne(rowid);
 	}
 	
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/username/{username}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Quiz> listByUsername(@PathVariable("username") String username) {
 		return quizRepository.findByUsername(username);
 	}
 	
-	@CrossOrigin
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PutMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK) 
 	public Quiz merge(@RequestBody Quiz quiz, @PathVariable("rowid") long id) {
