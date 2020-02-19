@@ -36,6 +36,7 @@ public class QuizesController {
 	
 	@CrossOrigin
 	@GetMapping
+	@ResponseStatus(HttpStatus.OK)
 	public List<Quiz> list() {
 		return quizRepository.findAll(Sort.by(Sort.Direction.ASC, "rowid"));
 	}
@@ -62,12 +63,14 @@ public class QuizesController {
 	
 	@CrossOrigin
 	@GetMapping("/{rowid}")
+	@ResponseStatus(HttpStatus.OK)
 	public Quiz get(@PathVariable("rowid") long rowid) {
 		return quizRepository.getOne(rowid);
 	}
 	
 	@CrossOrigin
 	@GetMapping("/username/{username}")
+	@ResponseStatus(HttpStatus.OK)
 	public List<Quiz> listByUsername(@PathVariable("username") String username) {
 		return quizRepository.findByUsername(username);
 	}
