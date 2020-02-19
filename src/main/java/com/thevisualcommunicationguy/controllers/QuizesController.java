@@ -37,6 +37,7 @@ public class QuizesController {
 	@Autowired
 	private QuizRepository quizRepository;
 	
+	@CrossOrigin
 	@RequestMapping(value = "/api/v1/quizes", method = RequestMethod.OPTIONS)
     public int options(@PathVariable String jiraid ,HttpServletResponse response) {
         response.setHeader("Access-Control-Allow-Methods","GET,HEAD,POST");
