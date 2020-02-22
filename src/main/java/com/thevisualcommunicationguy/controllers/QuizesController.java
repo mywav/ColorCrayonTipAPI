@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thevisualcommunicationguy.models.Quiz;
 import com.thevisualcommunicationguy.repositories.QuizRepository;
 
-@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1/quizes")
 public class QuizesController {	
@@ -37,14 +38,21 @@ public class QuizesController {
 	@Autowired
 	private QuizRepository quizRepository;
 	
-	@CrossOrigin
-	@RequestMapping(value = "/api/v1/quizes", method = RequestMethod.OPTIONS)
-    public int options(@PathVariable String jiraid ,HttpServletResponse response) {
-        response.setHeader("Access-Control-Allow-Methods","GET,HEAD,POST");
-        response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS");
-        response.setHeader("Access-Control-Allow-Origin","*");
-        return 234;
+	@RequestMapping(method = RequestMethod.OPTIONS)
+	@ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<?> handle() {
+		return new ResponseEntity(HttpStatus.OK);
     }
+	
+//	@CrossOrigin
+//	@GetMapping
+//	@RequestMapping(value = "/api/v1/quizes", method = RequestMethod.OPTIONS)
+//    public ResponseEntity options(@PathVariable String jiraid ,HttpServletResponse response) {
+//        response.setHeader("Access-Control-Allow-Methods","GET,HEAD,POST");
+//        response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS");
+//        response.setHeader("Access-Control-Allow-Origin","*");
+//        return handle();
+//    }
 	
 	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@GetMapping
