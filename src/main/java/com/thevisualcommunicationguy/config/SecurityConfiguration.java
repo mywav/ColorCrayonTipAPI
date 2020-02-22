@@ -28,6 +28,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .antMatchers(HttpMethod.POST, "/api/v1/users").permitAll()
         .antMatchers(HttpMethod.GET, "/api/v1/users").permitAll()
         .antMatchers(HttpMethod.GET, "/api/v1/users/**").permitAll()
+        .antMatchers(HttpMethod.OPTIONS, "/api/v1/users").permitAll()
+        .antMatchers(HttpMethod.OPTIONS, "/api/v1/users/**").permitAll()
+        .antMatchers(HttpMethod.OPTIONS, "/api/v1/quizes").permitAll()
+        .antMatchers(HttpMethod.OPTIONS, "/api/v1/quizes/**").permitAll()
     	.anyRequest().authenticated();
 	    http.cors();
 	}
