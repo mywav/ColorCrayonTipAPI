@@ -54,7 +54,7 @@ public class QuizesController {
 //        return handle();
 //    }
 	
-	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
+	@CrossOrigin(origins = {"http://colorcrayontip.ryannewbold.com", "http://localhost:4200"}, allowedHeaders = "*")
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<Quiz> list() {
@@ -88,7 +88,7 @@ public class QuizesController {
 		return quizRepository.getOne(rowid);
 	}
 	
-	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
+	@CrossOrigin(origins = {"http://colorcrayontip.ryannewbold.com", "http://localhost:4200"}, allowedHeaders = "*")
 	@GetMapping("/username/{username}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Quiz> listByUsername(@PathVariable("username") String username) {

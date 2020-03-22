@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thevisualcommunicationguy.models.User;
 import com.thevisualcommunicationguy.repositories.UserRepository;
 
-@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
+@CrossOrigin(origins = {"http://colorcrayontip.ryannewbold.com", "http://localhost:4200/*"}, allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1/users")
 public class UsersController {
@@ -44,7 +44,7 @@ public class UsersController {
         return 234;
     }
 	
-	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
+	@CrossOrigin(origins = {"http://colorcrayontip.ryannewbold.com", "http://localhost:4200"}, allowedHeaders = "*")
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<User> list() {
@@ -93,7 +93,7 @@ public class UsersController {
 		return user;
 	}
 	
-	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
+	@CrossOrigin(origins = {"http://colorcrayontip.ryannewbold.com", "http://localhost:4200"}, allowedHeaders = "*")
 	@GetMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK)
 	public User get(@PathVariable("rowid") long id) {
