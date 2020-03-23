@@ -61,7 +61,7 @@ public class QuizesController {
 		return quizRepository.findAll(Sort.by(Sort.Direction.ASC, "rowid"));
 	}
 
-	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
+	@CrossOrigin(origins = {"http://colorcrayontip.ryannewbold.com", "http://localhost:4200"}, allowedHeaders = "*")
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	public void create(@RequestBody Quiz quiz) {
@@ -81,7 +81,7 @@ public class QuizesController {
 		quizRepository.save(quiz);
 		}
 	
-	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
+	@CrossOrigin(origins = {"http://colorcrayontip.ryannewbold.com", "http://localhost:4200"}, allowedHeaders = "*")
 	@GetMapping("/{rowid}")
 	@ResponseStatus(HttpStatus.OK)
 	public Quiz get(@PathVariable("rowid") long rowid) {
