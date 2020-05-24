@@ -13,7 +13,7 @@
 	<artifactId>cctJune282019</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cctJune282019</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Color Crayon Tip</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
