@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "quiz")
+@Table(name = "quizes")
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Quiz {
 

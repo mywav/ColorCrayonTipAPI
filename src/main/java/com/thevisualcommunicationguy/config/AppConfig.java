@@ -15,6 +15,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 @Configuration
 public class AppConfig implements WebApplicationInitializer {
+
 //	@Bean(name = "entityManagerFactory")
 //	public LocalEntityManagerFactoryBean entityManagerFactory(){
 //	     LocalEntityManagerFactoryBean factoryBean = new LocalEntityManagerFactoryBean();
@@ -27,7 +28,7 @@ public class AppConfig implements WebApplicationInitializer {
 		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
 		dataSourceBuilder.driverClassName("org.postgresql.Driver");
 		dataSourceBuilder.url(
-				"postgres://mzyxfkgazradhd:da8088a6cf4657d729b56fddadccfcf44b38f9a0a826a64396ccf66495c17ec2@ec2-52-44-166-58.compute-1.amazonaws.com:5432/debsupspc92meh");
+				"jdbc:postgresql://ec2-52-44-166-58.compute-1.amazonaws.com:5432/debsupspc92meh");
 		dataSourceBuilder.username("mzyxfkgazradhd");
 		dataSourceBuilder.password("da8088a6cf4657d729b56fddadccfcf44b38f9a0a826a64396ccf66495c17ec2");
 		return dataSourceBuilder.build();

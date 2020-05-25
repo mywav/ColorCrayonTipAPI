@@ -8,9 +8,9 @@
         <class>com.thevisualcommunicationguy.models.Quiz</class>
 
         <properties>
-            <property name="dialect" value="org.hibernate.dialect.SQLiteDialect" />
-            <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:colorcrayontip.db" />
+            <property name="dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url" value="postgres://mzyxfkgazradhd:da8088a6cf4657d729b56fddadccfcf44b38f9a0a826a64396ccf66495c17ec2@ec2-52-44-166-58.compute-1.amazonaws.com:5432/debsupspc92meh" />
             <property name="javax.persistence.jdbc.user" value="" />
             <property name="javax.persistence.jdbc.password" value="" />
             <property name="hibernate.show_sql" value="true" />
