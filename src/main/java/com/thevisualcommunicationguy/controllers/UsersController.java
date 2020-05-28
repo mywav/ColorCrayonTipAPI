@@ -60,7 +60,7 @@ public class UsersController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.execute(
-						"INSERT INTO user (username) VALUES ('" + user.getUsername() + "')"
+						"INSERT INTO users (username) VALUES ('" + user.getUsername() + "')"
 				);
 				statement.close();
 				connection.close();
@@ -81,7 +81,7 @@ public class UsersController {
 			Connection connection = dataSource.getConnection();
 			Statement statement = connection.createStatement();
 			statement.executeUpdate(
-					"UPDATE user SET username = '" + user.getUsername() + "' WHERE rowid = " + user.getId()
+					"UPDATE users SET username = '" + user.getUsername() + "' WHERE rowid = " + user.getId()
 		);
 			statement.close();
 			connection.close();
