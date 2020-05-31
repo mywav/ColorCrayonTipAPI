@@ -59,7 +59,7 @@ public class UsersController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.execute(
-						"INSERT INTO users (username) VALUES ('" + user.getUsername() + "')"
+						"INSERT INTO users (username) VALUES ('" + user.getId() + "')"
 				);
 				statement.close();
 				connection.close();
