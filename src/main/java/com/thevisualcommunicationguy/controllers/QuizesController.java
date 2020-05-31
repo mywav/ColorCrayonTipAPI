@@ -70,7 +70,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.execute(
-						"INSERT INTO quiz (rowid) VALUES ('" + quiz.getId() + "')"
+						"INSERT INTO quizes (rowid) VALUES ('" + quiz.getId() + "')"
 				);
 				statement.close();
 				connection.close();
@@ -106,7 +106,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET date_taken = " + simpleDateFormat.format(quiz.getDateTaken()) + " WHERE rowid = " +
+						"UPDATE quizes SET date_taken = " + simpleDateFormat.format(quiz.getDateTaken()) + " WHERE rowid = " +
 						quiz.getId()
 					);
 				statement.close();
@@ -122,7 +122,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question01 = " +
+						"UPDATE quizes SET question01 = " +
 						quiz.getQuestion01() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -138,7 +138,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question02 = " +
+						"UPDATE quizes SET question02 = " +
 						quiz.getQuestion02() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -154,7 +154,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question03 = " +
+						"UPDATE quizes SET question03 = " +
 						quiz.getQuestion03() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -170,7 +170,7 @@ public class QuizesController {
 					Connection connection = dataSource.getConnection();
 					Statement statement = connection.createStatement();
 					statement.executeUpdate(
-							"UPDATE quiz SET question04 = " +
+							"UPDATE quizes SET question04 = " +
 							quiz.getQuestion04() + " WHERE rowid = " +
 							quiz.getId()
 						);
@@ -186,7 +186,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question05 = " +
+						"UPDATE quizes SET question05 = " +
 						quiz.getQuestion05() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -202,7 +202,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question06 = " +
+						"UPDATE quizes SET question06 = " +
 						quiz.getQuestion06() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -218,7 +218,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question07 = " +
+						"UPDATE quizes SET question07 = " +
 						quiz.getQuestion07() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -234,7 +234,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question08 = " +
+						"UPDATE quizes SET question08 = " +
 						quiz.getQuestion08() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -250,7 +250,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question09 = " +
+						"UPDATE quizes SET question09 = " +
 						quiz.getQuestion09() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -266,7 +266,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET question10 = " +
+						"UPDATE quizes SET question10 = " +
 						quiz.getQuestion10() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -282,7 +282,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET username = " +
+						"UPDATE quizes SET username = " +
 						quiz.getUsername().toString() + " WHERE rowid = " +
 						quiz.getId()
 					);
@@ -298,7 +298,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate(
-						"UPDATE quiz SET nameofpaper = " +
+						"UPDATE quizes SET nameofpaper = " +
 						quiz.getNameofpaper().toString() + " WHERE rowid = " +
 						quiz.getId()
 					);
