@@ -56,7 +56,6 @@ public class UsersController {
 	@ResponseStatus(HttpStatus.OK)
 	public void create(@RequestBody User user) {
 			try {				
-				System.out.println(user.getUsername());
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.execute(
