@@ -69,9 +69,9 @@ public class QuizesController {
 			try {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
-//				statement.execute(
-//						"INSERT INTO quizes (rowid) VALUES ('" + quiz.getId() + "')"
-//				);
+				statement.execute(
+						"INSERT INTO quizes (rowid) VALUES ('" + quiz.getId() + "')"
+				);
 				statement.close();
 				connection.close();
 			}
