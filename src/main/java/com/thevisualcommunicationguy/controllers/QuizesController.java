@@ -44,15 +44,15 @@ public class QuizesController {
 		return new ResponseEntity(HttpStatus.OK);
     }
 	
-//	@CrossOrigin
-//	@GetMapping
-//	@RequestMapping(value = "/api/v1/quizes", method = RequestMethod.OPTIONS)
-//    public ResponseEntity options(@PathVariable String jiraid ,HttpServletResponse response) {
-//        response.setHeader("Access-Control-Allow-Methods","GET,HEAD,POST");
-//        response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS");
-//        response.setHeader("Access-Control-Allow-Origin","*");
-//        return handle();
-//    }
+	@CrossOrigin
+	@GetMapping
+	@RequestMapping(value = "/api/v1/quizes", method = RequestMethod.OPTIONS)
+    public ResponseEntity options(@PathVariable String jiraid ,HttpServletResponse response) {
+        response.setHeader("Access-Control-Allow-Methods","GET,HEAD,POST");
+        response.setHeader("Allow", "HEAD,GET,PUT,OPTIONS");
+        response.setHeader("Access-Control-Allow-Origin","*");
+        return handle();
+    }
 	
 	@CrossOrigin(origins = "http://colorcrayontip.ryannewbold.com", allowedHeaders = "*")
 	@GetMapping
