@@ -70,7 +70,7 @@ public class QuizesController {
 			Connection connection = dataSource.getConnection();
 			Statement statement = connection.createStatement();
 			statement.execute(
-					"INSERT INTO quizes (rowid, username, date_taken, nameofpaper, question01, question02, question03, question04, question05, question06, question07, question08, question09, question10) VALUES ('1, "
+					"INSERT INTO quizes (rowid, username, date_taken, nameofpaper, question01, question02, question03, question04, question05, question06, question07, question08, question09, question10) VALUES ('null, "
 							+ quiz.getUsername() + ", " + quiz.getDateTaken() + ", " + quiz.getNameofpaper() + ", "
 							+ quiz.getQuestion01() + ", " + quiz.getQuestion02() + ", " + quiz.getQuestion03() + ", "
 							+ quiz.getQuestion04() + ", " + quiz.getQuestion05() + ", " + quiz.getQuestion06() + ", "
