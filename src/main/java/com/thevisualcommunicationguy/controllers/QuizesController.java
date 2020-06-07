@@ -70,7 +70,7 @@ public class QuizesController {
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.execute(
-						"INSERT INTO quizes (username, date_taken) VALUES ('" + quiz.getUsername() + ", " + quiz.getDateTaken() + "')"
+						"INSERT INTO quizes (username, date_taken) VALUES ('" + quiz.getUsername() + ", " + quiz.getDateTaken() + ", " + quiz.getQuestion01() + ";')"
 				);
 				statement.close();
 				connection.close();
