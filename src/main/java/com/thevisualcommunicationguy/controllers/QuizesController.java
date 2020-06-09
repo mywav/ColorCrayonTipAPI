@@ -73,7 +73,7 @@ public class QuizesController {
 					+ "', '" + quiz.getNameofpaper() + "', '" + quiz.getQuestion01() + "', '" + quiz.getQuestion02() 
 					+ "', '" + quiz.getQuestion03() + "', '" + quiz.getQuestion04() + "', '" + quiz.getQuestion05() + "', '" 
 					+ quiz.getQuestion06() + "', '" + quiz.getQuestion07() + "', '" + quiz.getQuestion08() + "', '" 
-					+ quiz.getQuestion09() + "', '" + quiz.getQuestion10() + ";);");
+					+ quiz.getQuestion09() + "', '" + quiz.getQuestion10() + "');");
 			statement.close();
 			connection.close();
 		} catch (SQLException e) {
