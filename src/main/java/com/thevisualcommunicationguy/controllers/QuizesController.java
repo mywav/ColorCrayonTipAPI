@@ -69,8 +69,8 @@ public class QuizesController {
 		try {
 			Connection connection = dataSource.getConnection();
 			Statement statement = connection.createStatement();
-			statement.execute(
-					"INSERT INTO quizes (username, nameofpaper) VALUES ('" + quiz.getUsername() + "', '" + quiz.getNameofpaper() + "');");
+			statement.execute("INSERT INTO quizes (username, nameofpaper, question01) VALUES ('" + quiz.getUsername()
+					+ "', '" + quiz.getNameofpaper() + "', '" + quiz.getQuestion01() + "');");
 			statement.close();
 			connection.close();
 		} catch (SQLException e) {
