@@ -72,7 +72,7 @@ public class QuizesController {
 			statement.execute(
 					"INSERT INTO quizes (username, nameofpaper, question01, question02, question03, question04, "
 					+ "question05, question06, question07, question08, question09, question10) VALUES ('"
-							+ quiz.getUsername() + "', '" + quiz.getNameofpaper() + "', " + quiz.getQuestion01() + ", "
+							+ quiz.getUsername() + "', '" + quiz.getNameofpaper() + "', '" + quiz.getDateTaken() + "', "+ quiz.getQuestion01() + ", "
 							+ quiz.getQuestion02() + ", " + quiz.getQuestion03() + ", " + quiz.getQuestion04() + ", "
 							+ quiz.getQuestion05() + ", " + quiz.getQuestion06() + ", " + quiz.getQuestion07() + ", "
 							+ quiz.getQuestion08() + ", " + quiz.getQuestion09() + ", " + quiz.getQuestion10() + ");");
