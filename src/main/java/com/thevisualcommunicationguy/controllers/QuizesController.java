@@ -108,7 +108,8 @@ public class QuizesController {
 				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
-				statement.executeUpdate("UPDATE quizes SET date_taken = " + simpleDateFormat.format(quiz.getDateTaken().toInstant())
+				System.out.println(simpleDateFormat.format(quiz.getDateTaken()));
+				statement.executeUpdate("UPDATE quizes SET date_taken = " + simpleDateFormat.format(quiz.getDateTaken())
 						+ " WHERE rowid = " + quiz.getId());
 				statement.close();
 				connection.close();
