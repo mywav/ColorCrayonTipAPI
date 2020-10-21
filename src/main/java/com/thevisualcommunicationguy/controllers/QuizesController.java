@@ -105,7 +105,7 @@ public class QuizesController {
 
 		if (quiz.getDateTaken() != null)
 			try {
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
+				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 				Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				statement.executeUpdate("UPDATE quizes SET date_taken = " + simpleDateFormat.format(quiz.getDateTaken())
